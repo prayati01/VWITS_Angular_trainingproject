@@ -1,4 +1,6 @@
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { ModelModule } from "../model/model.module";
 import { StoreComponent } from "./store.component";
 
 
@@ -7,9 +9,9 @@ import { StoreComponent } from "./store.component";
 
 @NgModule({
     declarations:[StoreComponent], //add alll class names who had @Component() decorator
-    imports:[],
+    imports:[ModelModule,BrowserModule], // add all module class names on which this modeule depends
     providers:[],
-    exports:[] //add all names which will be used by some other module
+    exports:[StoreComponent] //add all names which will be used by some other module
 })
 
 export class StoreModule{
