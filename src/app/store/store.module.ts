@@ -1,19 +1,22 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
 import { ModelModule } from "../model/model.module";
-import { StoreComponent } from "./store.component";
 
 
 //to add objects in js we put{}brackets 
 
 
 @NgModule({
-    declarations:[StoreComponent], //add alll class names who had @Component() decorator
-    imports:[ModelModule,BrowserModule], // add all module class names on which this modeule depends
+    declarations:[], //add all class names who had @Component() decorator
+    imports:[ModelModule,CommonModule], // add all module class names on which this modeule depends
     providers:[],
-    exports:[StoreComponent] //add all names which will be used by some other module
+    exports:[] //add all names which will be used by some other module
 })
 
 export class StoreModule{
 
 }
+
+
+//browser module is a part of angular which is added by npm at start as browser to browser functionality changes i.e how browser deals with ui part so angular adds it remove problem 
+//we added Common module in "imports" bcoz browser module is already added in app module 

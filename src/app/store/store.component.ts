@@ -6,6 +6,7 @@ import { ProductRepository } from "../model/product.repository";
 
 @Component({
     selector: "vwits-store",
+    standalone: true,
     templateUrl: "store.component.html"
 })
 export class StoreComponent{
