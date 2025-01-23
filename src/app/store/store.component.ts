@@ -13,7 +13,7 @@ import { ProductRepository } from "../model/product.repository";
 })
 export class StoreComponent{
 
-    myDate = new Date().getDate();
+    //myDate = new Date();   ----to add the date 
     constructor(private repository: ProductRepository){}
 
     //this "get products" is a property basically a getter method if we compare it with java
