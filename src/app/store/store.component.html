@@ -7,10 +7,24 @@
 
 
     <div class ="row text-white">
-        <div class ="col-3 p-2 bg-primary">
+        <div class ="col-3 p-2">
             <div class="d-grid gap-2">
-                <!--we used string interpolation in next line-->
+                <button class = "btn btn-outline-primary"
+                    (click) = "changeCategory()">
+                    Home
+                </button>
+
+                <button class = "btn btn-outline-primary"
+                    [class.active] = "cat == selectedCatergory"
+                    (click)  = "changeCategory(cat)"
+                    *ngFor = "let cat of categories">
+                {{cat}}
+                </button>
+
+                <!--we used string interpolation in next line:
                 {{ categories.length }} categories
+                -->
+                
             </div>
         </div>
         <div class="col-9 p-2 text-dark">
@@ -19,7 +33,7 @@
                 <h4>
                     {{product.name }} <!--to turn it into upper or lower case, 
                      wecan add pipe : {{product.name | Uppercase}}-->
-                    <span class ="badg rounded-pill bg-primary" style="float: right;">
+                    <span class ="badge rounded-pill bg-primary" style="float: right;">
                         {{product.price | currency:"INR"}} <!--whatever is written after vertical line is called "pipe"-->
                     </span>
                 </h4>
