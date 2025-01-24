@@ -17,7 +17,7 @@
                         <th>Quantity</th>
                         <th>Product</th>
                         <th class="float-end">Price</th>
-                        <th class="float-end">Subtotal</th>
+                        <th class="text-end">Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,11 +30,52 @@
                         <td>
                             <input type = "number" class="form-control-sm" style="width:6em;"
                                     [value]="line.quantity"
+                                    min="1"
                                     (change) ="cart.updateQuantity(line.product,$any($event).target.value)"/>
+                        </td>
+                        <td>
+                            {{line.product.name}}
+                        </td>
+                        <td class="text-end">
+                            {{line.product.price | currency:"INR"}}
+                        </td>
+                        <td class="text-end">
+                            {{line.lineTotal | currency:"INR"}}
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-danger"
+                                    (click)="cart.removeLine(line.product.id ?? 0)">
+                                Remove 
+                                </button>
                         </td>
                     </tr>
                 </tbody>
+
+                <!--for adding total car price-->>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end">
+                            Total:
+                        </td>
+                        <td class="text-end">
+                            {{cart.cartPrice | currency:"INR"}}
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <button class="btn btn-secondary m-1" routerLink="/store">
+                    Continue Shopping
+                </button>
+                <button class="btn btn-primary m-1" routerLink="/checkout"
+                    [disabled] = "cart.lines.length ==0">
+                    Checkout
+                </button>
+            </div>
         </div>
     </div>
 </div>
