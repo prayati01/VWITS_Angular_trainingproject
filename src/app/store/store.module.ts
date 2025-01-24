@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { ModelModule } from "../model/model.module";
 
@@ -9,7 +10,7 @@ import { ModelModule } from "../model/model.module";
 
 @NgModule({
     declarations:[], //add all class names who had @Component() decorator
-    imports:[ModelModule,CommonModule, RouterModule], // add all module class names on which this modeule depends
+    imports:[ModelModule,CommonModule, RouterModule, FormsModule], // add all module class names on which this modeule depends
     providers:[],
     exports:[] //add all names which will be used by some other module
 })
