@@ -11,7 +11,7 @@ import { CartSummaryComponent } from "./cartSummary.component";
     selector: "vwits-store",
     standalone: true,
     imports: [CommonModule, CartSummaryComponent],
-    templateUrl: "store.component.html"
+    templateUrl: "store.component.html",
 })
 export class StoreComponent{
 

@@ -1,5 +1,39 @@
-<div>
-    <h3 class="bg-info p-1 text-white">
-        This is Cart Detail View
-    </h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="bg-dark text-white p-2">
+            <span class="navbar-brand ml-2">
+                Volkswagen Online Shop
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-2">
+            <h2 class="text-center">
+                Your cart
+            </h2>
+            <table class="table table-striped table-bordered p-2">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Product</th>
+                        <th class="float-end">Price</th>
+                        <th class="float-end">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="cart.lines.length ==0">
+                        <td colspan="4" class="text-center">
+                            Your cart is empty!
+                        </td>
+                    </tr>
+                    <tr *ngFor="let line of cart.lines">
+                        <td>
+                            <input type = "number" class="form-control-sm" style="width:6em;"
+                                    [value]="line.quantity"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
