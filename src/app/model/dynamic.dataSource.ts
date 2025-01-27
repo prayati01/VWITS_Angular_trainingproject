@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 import { Order } from "./order.model";
 import { Product } from "./product.model";
 
@@ -26,8 +26,9 @@ export class DynamicDataSource{
 
     authenticate(user:string, pass: string): Observable<boolean>{
         return this.http.post<any>(this.baseUrl + "login", {
-            name: user, password:pass
-        });
+            name: user, password:pass}).pipe(map(response => {
+                this.auth_token = response.success ? response.token : null;
+                return response.success;
+            }));
     }
-
 }
