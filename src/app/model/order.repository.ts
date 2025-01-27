@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { DynamicDataSource } from "./dynamic.dataSource";
 import { Order } from "./order.model";
-import { StaticDataSource } from "./static.datasource";
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class OrderRespository{
 
     private orders: Order[] =[];
 
-    constructor(private dataSource: StaticDataSource){ }
+    constructor(private dataSource: DynamicDataSource){ }
 
     getOrders() : Order[]{
         return this.orders;

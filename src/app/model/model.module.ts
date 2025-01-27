@@ -10,7 +10,6 @@ import { StaticDataSource } from "./static.datasource";
 
 @NgModule({
     declarations:[],
-    imports:[HttpClientModule],
     providers:[ProductRepository, Cart, Order, OrderRespository,
         {provide:StaticDataSource, useClass:DynamicDataSource}
      ],//add all class names who has @Injectable() decorator

@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { StoreComponent } from './store/store.component';
 import { StoreModule } from './store/store.module';
 
 @Component({
   selector: 'prayati',
   standalone: true,
-  imports: [RouterOutlet, StoreComponent, StoreModule, CommonModule],
+  imports: [RouterOutlet, StoreModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
