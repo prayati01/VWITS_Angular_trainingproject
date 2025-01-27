@@ -1,10 +1,12 @@
+import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { FormsModule, NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 
 
 @Component({
-    templateUrl: "auth.component.html"
+    templateUrl: "auth.component.html",
+    imports: [FormsModule,CommonModule]
 })
 export class AuthComponent{
     //two way data binding
