@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "json": "json-server vwitsDb.js -p 5005"
+    "json": "json-server vwitsDb.js -p 5005 -m vwitsAuthMiddleware.js"
   },
   "private": true,
   "dependencies": {

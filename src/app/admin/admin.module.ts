@@ -1,4 +1,7 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 
 //to add objects in js we put{}brackets 
@@ -6,7 +9,7 @@ import { NgModule } from "@angular/core";
 
 @NgModule({
     declarations:[],
-    imports:[],
+    imports:[FormsModule, CommonModule, RouterModule],
     providers:[],
     exports:[]
 })
