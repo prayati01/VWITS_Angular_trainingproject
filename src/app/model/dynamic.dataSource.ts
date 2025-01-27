@@ -10,6 +10,7 @@ const PORT =5005;
 @Injectable({providedIn: 'root',})
 export class DynamicDataSource{
     baseUrl : string;
+    auth_token?:string;
 
     constructor(private http:HttpClient){
         this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
@@ -22,4 +23,11 @@ export class DynamicDataSource{
     saveOrder(order: Order):Observable<Order>{
         return this.http.post<Order>(this.baseUrl + "orders", order);
     }
+
+    authenticate(user:string, pass: string): Observable<boolean>{
+        return this.http.post<any>(this.baseUrl + "login", {
+            name: user, password:pass
+        });
+    }
+
 }
