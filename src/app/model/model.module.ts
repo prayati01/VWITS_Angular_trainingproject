@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { AuthService } from "./auth.service";
 import { Cart } from "./cart.model";
 import { DynamicDataSource } from "./dynamic.dataSource";
 import { Order } from "./order.model";
@@ -11,7 +12,7 @@ import { StaticDataSource } from "./static.datasource";
 @NgModule({
     declarations:[],
     providers:[ProductRepository, Cart, Order, OrderRespository,
-        {provide:StaticDataSource, useClass:DynamicDataSource}
+        {provide:StaticDataSource, useClass:DynamicDataSource}, DynamicDataSource, AuthService
      ],//add all class names who has @Injectable() decorator
     exports:[]
 })
